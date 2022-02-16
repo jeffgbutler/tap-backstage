@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
-  name: default-org
-  description: The Default Organization
+  name: demo-corp
+  description: The demo-corp organization
   links:
     - url: http://www.backstage.io/
       title: Website
@@ -11,17 +11,19 @@ metadata:
 spec:
   type: organization
   profile:
-    displayName: Default Organization
+    displayName: Demo Corp
     email: demo@example.com
     picture: https://avatars.dicebear.com/api/identicon/info@example.com.svg?background=%23fff&margin=25
-  children: [default-team]
+  children: [it]
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Location
 metadata:
-  name: default-group
-  description: A Default Group Location
+  name: example-group
+  description: A Backstage example group
 spec:
   targets:
-    - ./default-team.yaml
-    - ./default-user.yaml
+    - ./it-dept.yaml
+    - ./dev-dept.yaml
+    - ./team-a-group.yaml
+    - ./team-b-group.yaml
